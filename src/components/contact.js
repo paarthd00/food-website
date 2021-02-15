@@ -78,11 +78,11 @@ const Contact = () => {
 
                 <div className="form-group">
                     {/* <label>Email</label> */}
-                    <input placeholder="Email@hotmail.com"className="form-control" type="email" name="userEmail" value={userEmail} onChange={userEmailHandler} />
+                    <input placeholder="Email@hotmail.com" className="form-control" type="email" name="userEmail" value={userEmail} onChange={userEmailHandler} />
                 </div>
                 <div className="form-group">
                     {/* <label>Message</label> */}
-                    <textarea placeholder="say hi!!"className="md-textarea form-control" name="userMessage" value={userMessage} onChange={userMessageHandler} />
+                    <textarea placeholder="say hi!!" className="md-textarea form-control" name="userMessage" value={userMessage} onChange={userMessageHandler} />
                 </div>
                 {
                     errorMessage !== '' &&

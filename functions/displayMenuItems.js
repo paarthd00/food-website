@@ -1,11 +1,11 @@
 const co = require('co');
 const mongoose = require('mongoose');
-
+require('dotenv').config();
 let conn = null;
 
-const uri = 'mongodb+srv://p:0JeuHyRfRL79VGgv@cluster0.u1yl9.mongodb.net/urban-memory?retryWrites=true&w=majority';
+const uri = `${process.env.MONGODB_URI}`;
 
-exports.handler = function(event, context, callback) {
+exports.handler = function (event, context, callback) {
 
   context.callbackWaitsForEmptyEventLoop = false;
 
@@ -17,22 +17,22 @@ exports.handler = function(event, context, callback) {
 };
 
 function run() {
-  return co(function*() {
+  return co(function* () {
 
     if (conn == null) {
       conn = yield mongoose.createConnection(uri, {
         bufferCommands: false,
         bufferMaxEntries: 0
       });
-      conn.model('videos', new mongoose.Schema({
+      conn.model('menuitems', new mongoose.Schema({
+        _id: String,
         name: String,
-        url: String,
-        folder: String,
         description: String,
+        price: Number,
       }));
     }
 
-    const M = conn.model('videos');
+    const M = conn.model('menuitems');
 
     const doc = yield M.find();
     const response = {

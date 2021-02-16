@@ -4,7 +4,7 @@ import { init } from 'emailjs-com';
 import "./layout.css"
 init("user_ftnuhY2RHYOnSz8gwmbFJ");
 
-const Contact = () => {
+const ContactForm = () => {
     const [userName, setName] = useState("");
     const [userEmail, setEmail] = useState("");
     const [userMessage, setMessage] = useState("");
@@ -65,8 +65,8 @@ const Contact = () => {
 
     return (
         <div style={{ maxWidth: `600px`, margin: `auto`, padding: `10px 15px` }}>
-            <h3> Feeling Formal ?</h3>
-            <p>Send a quick message, and let's connect</p>
+            <h3>  Contact Us</h3>
+            <p>Send a quick message, and place an order</p>
             <form className="contact-form md-form" onSubmit={sendEmail} style={{
                 display: `grid`
             }}>
@@ -100,7 +100,7 @@ const Contact = () => {
     )
 }
 
-export default Contact
+export default ContactForm
 
 
 

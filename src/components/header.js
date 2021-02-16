@@ -11,7 +11,7 @@ const Header = ({ siteTitle }) => {
   const [cartState, setCartState] = useContext(ToggleCartContext)
   const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ margin: `auto` }} icon={faShoppingCart} />
   const instaimage = <a className="instaButton" href="https://www.instagram.com/lola.yvr/"><img style={{ margin: `auto` }} src={insta} alt="insta" width="20px" /></a>
-  const contactButton =  <Link className="contactButton" to="/contact">contactus</Link>
+  const contactButton = <Link className="contactButton" to="/contact">contactus</Link>
   function toggleCart() {
     if (cartState) {
       document.getElementById('cartContainer').style.display = "block";
@@ -22,8 +22,6 @@ const Header = ({ siteTitle }) => {
       setCartState(true)
     }
   }
-
-
 
   return (
     <header

@@ -1,5 +1,6 @@
 const co = require('co');
 const mongoose = require('mongoose');
+mongoose.set('useNewUrlParser', true);
 require('dotenv').config();
 let conn = null;
 
@@ -20,10 +21,7 @@ function run() {
   return co(function* () {
 
     if (conn == null) {
-      conn = yield mongoose.createConnection(uri, {
-        bufferCommands: false,
-        bufferMaxEntries: 0
-      });
+      conn = yield mongoose.createConnection(uri,  { useNewUrlParser: true });
       conn.model('menuitems', new mongoose.Schema({
         _id: String,
         name: String,

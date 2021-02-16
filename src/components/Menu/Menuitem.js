@@ -7,12 +7,9 @@ const MenuItem = (myitem) => {
             <div style={{ display: `grid`, gridTemplateColumns: `1fr 1fr 1fr`, textAlign: `center`, alignItems: `center` }}>
                 {/* {myitem.myitem.image && <img src={myitem.myitem.image} alt={myitem.myitem.name} style={{ width: `100px`, borderRadius: `50%` }}></img>} */}
                 <h5>{myitem.myitem.name}</h5>
-                <p>${myitem.myitem.price}</p>
-                {/* <p>${myitem.myitem.price?.familySize}</p> */}
+                <p>$ {myitem.myitem.price}</p>
             </div>
             <p>{myitem.myitem.description}</p>
-            <button className="btn" type="submit">Add</button>
-
         </div>
     )
 }

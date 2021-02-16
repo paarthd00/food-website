@@ -12,7 +12,8 @@ const IndexPage = () => {
         <SEO title="Home" />
         <Image />
         <ContactForm />
-        <Link to="/page-2/">Read More</Link> <br />
+        <Link to="/page-2/">Menu_Page</Link> <br />
+        <Link to="/updatemenu/">InsertItems</Link> <br />
       </Layout>
   )
 }

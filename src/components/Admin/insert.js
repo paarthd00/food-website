@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import API from '../../utils/api';
 
-
 const InsertComponent = () => {
     const [errorMessage, setErrors] = useState('');
     const [itemName, setMenuItemName] = useState('')

@@ -1,14 +1,13 @@
 const co = require('co');
 const mongoose = require('mongoose');
-const menuSchema = require('../models/menuItemSchema')
+const { Schema } = mongoose
 let conn = null;
-
+let tempMenuItem;
 const uri = process.env.MONGODB_URI;
 
-exports.handler = async (event, context, callback) => {
-
+exports.handler = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
-
+    tempMenuItem = JSON.parse(event.body)
     run().
         then(res => {
             callback(null, res);
@@ -21,19 +20,26 @@ const run = () => {
 
         if (conn == null) {
             conn = yield mongoose.createConnection(uri, {
-                bufferCommands: false,
-                bufferMaxEntries: 0
+                useNewUrlParser: true,
+                useUnifiedTopology: true
             });
-            conn.model('menuitems', new menuSchema());
+            conn.model('menuitems', new Schema({
+                "name": String,
+                "description": String,
+                "price": Number
+            }));
         }
+        //Inserting document in collection
+        conn.collection('menuitems').insertOne(tempMenuItem)
+        const M = conn.model('menuitems')
 
-        const M = conn.model('menuitems');
-
+        //doc is assigned the value of menuitems and is sent as reponse
         const doc = yield M.find();
         const response = {
             statusCode: 200,
             body: JSON.stringify(doc)
         };
+
         return response;
     });
 }

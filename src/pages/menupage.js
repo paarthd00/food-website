@@ -7,12 +7,15 @@ import Menu from "../components/Menu/Menu"
 const SecondPage = () => (
   <Layout>
     <SEO title="MenuPage" />
-    <h1>This is Food page</h1>
-    <p>Spicy and aroma that tastes like the best dish from your lola</p>
-    <div style={{ maxWidth: `600px`, marginBottom: `1.45rem`, margin: `auto` }}>
-      <Menu />
+    <div className="menu-container" style={{textAlign:`center`}}>
+      <h1>This is Food page</h1>
+      <h6>Spicy and aroma that tastes like the best dish from your lola</h6>
+      <div style={{ maxWidth: `600px`, marginBottom: `1.45rem`, margin: `auto` }}>
+        <Menu />
+      </div>
+      <Link to="/">Go back to the homepage</Link>
     </div>
-    <Link to="/">Go back to the homepage</Link>
+
   </Layout>
 )
 

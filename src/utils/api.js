@@ -25,9 +25,10 @@ const updateMenuItem = (todoId, data) => {
     })
 }
 
-const deleteMenuItem = (menuItemId) => {
-    return fetch(`/.netlify/functions/delete-menu-item/${menuItemId}`, {
+const deleteMenuItem = (menuItem) => {
+    return fetch(`/.netlify/functions/delete-menu-item/${menuItem}`, {
         method: 'POST',
+        body: JSON.stringify(menuItem)
     }).then(response => {
         return response.json()
     })
@@ -43,6 +44,7 @@ const batchDeleteMenuItem = (menuItemIds) => {
         return response.json()
     })
 }
+
 
 export default {
     create: createMenuItem,

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Products from "../Products/Products"
+// import Products from "../Products/Products"
 import "./menu.css"
 import MenuItem from './Menuitem'
 import API from '../../utils/api';
@@ -12,7 +12,7 @@ const Menu = () => {
             API.readAll()
                 .then(json => setMenuItems(json))
                 .catch(err => console.log(err))
-                
+
     }, [menuitems])
 
     const list = (menuitems) ? menuitems.map((el, i) => {
@@ -22,9 +22,9 @@ const Menu = () => {
     }) : <></>
 
     return (
-        <div>
+        <div style={{maxWidth: `650px`,margin:`auto`,width:`650px`}}>
             {list}
-            <Products />
+            {/* <Products /> */}
         </div>
     )
 }

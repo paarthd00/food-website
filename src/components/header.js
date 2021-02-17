@@ -4,16 +4,16 @@ import React, { useContext } from "react"
 import logo from '../images/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-import insta from '../images/insta.svg'
+// import insta from '../images/insta.svg'
 import { ToggleCartContext } from '../context/CartContext'
 
 
 const Header = ({ siteTitle }) => {
   const [cartState, setCartState] = useContext(ToggleCartContext)
   const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ margin: `auto` }} icon={faShoppingCart} />
-  const instaimage = <a className="instaButton" href="https://www.instagram.com/lola.yvr/"><img style={{ margin: `auto` }} src={insta} alt="insta" width="20px" /></a>
-  const contactButton = <Link className="contactButton" to="/contact">contactus</Link>
   
+  const contactButton = <Link className="btn contactButton" to="/contact">CONTACT</Link>
+
   function toggleCart() {
     if (cartState) {
       document.getElementById('cartContainer').style.display = "block";
@@ -28,7 +28,7 @@ const Header = ({ siteTitle }) => {
   return (
     <header
       style={{
-        background: `darkcyan`,
+        background: `whitesmoke`,
         marginBottom: `1.45rem`,
       }}
     >
@@ -56,10 +56,10 @@ const Header = ({ siteTitle }) => {
             <img src={logo} alt={siteTitle} width="200px"></img>
           </Link>
         </h1>
-        <div style={{ display: `grid`, justifyContent: `center`, cursor: `pointer` }}>
-          {cart}
-          {instaimage}
+        <div style={{ display: `grid`, justifyContent: `center`, cursor: `pointer`, gridTemplateColumns: `1fr 1fr` }}>
           {contactButton}
+          {/* {instaimage} */}
+          {cart}
         </div>
       </div>
     </header>

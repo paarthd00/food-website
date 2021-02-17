@@ -12,8 +12,10 @@ import { CartListContext, ToggleCartContext } from "../context/CartContext";
 import Header from "./header"
 import "./layout.css"
 import Cart from "../components/cart"
+import insta from '../images/insta.svg'
 
 const Layout = ({ children }) => {
+  // const instaimage = 
   const [cartList, setCartList] = useState([])
   const [cartState, setCartState] = useState(false)
   const data = useStaticQuery(graphql`
@@ -63,7 +65,9 @@ const Layout = ({ children }) => {
               }}
             >
               © Lola Comfort Food, 2021
-        </footer>
+              <a style={{ marginLeft: `30px` }} className="instaButton" href="https://www.instagram.com/lola.yvr/"><img style={{ margin: `auto` }} src={insta} alt="insta" width="20px" /></a>
+
+            </footer>
           </div>
         </CartListContext.Provider>
       </ToggleCartContext.Provider>

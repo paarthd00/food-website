@@ -1,4 +1,3 @@
-// import { element } from 'prop-types';
 import Checkout from "../components/checkout"
 import React, { useContext } from 'react'
 import { CartListContext } from "../context/CartContext";
@@ -6,7 +5,6 @@ const _ = require('lodash');
 
 const Cart = () => {
     const [cartList, setCartList] = useContext(CartListContext)
-    // const [currentitemname, setState] = useState('')
     const cartArray = Object.keys(cartList).map(key =>
         cartList[key]
     )

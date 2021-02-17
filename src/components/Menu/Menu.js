@@ -2,21 +2,17 @@ import React, { useEffect, useState } from "react";
 import Products from "../Products/Products"
 import "./menu.css"
 import MenuItem from './Menuitem'
-
+import API from '../../utils/api';
 const Menu = () => {
 
     const [menuitems, setMenuItems] = useState([])
-    
+
     useEffect(() => {
-        async function fetchdata() {
-            await fetch('/.netlify/functions/displayMenuItems')
-                .then(response => response.json())
+        if (!menuitems.length)
+            API.readAll()
                 .then(json => setMenuItems(json))
                 .catch(err => console.log(err))
-        }
-        if (!menuitems.length)
-            fetchdata()
-        console.log(menuitems)
+                
     }, [menuitems])
 
     const list = (menuitems) ? menuitems.map((el, i) => {

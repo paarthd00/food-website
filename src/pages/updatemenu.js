@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import API from '../utils/api';
 const UpdateMenu = () => {
     const [errorMessage, setErrors] = useState('');
     const [itemName, setMenuItemName] = useState('')
@@ -38,8 +38,9 @@ const UpdateMenu = () => {
         setErrors(err)
         setMenuItemPrice(val)
     }
-    const insertNewItem = () => {
-        axios.post('/.netlify/functions/addMenuItem', {
+    const insertNewItem = (e) => {
+        e.preventDefault();
+        API.create({
             "name": itemName,
             "description": itemDescription,
             "price": itemPrice
@@ -47,34 +48,34 @@ const UpdateMenu = () => {
     }
     return (
         <Layout>
-        <SEO title="Updateadmin" />
-        <div style={{ maxWidth: `600px`, margin: `auto`, padding: `10px 15px` }}>
-            <h3>Insert New Item</h3>
-            <p>Admin control, form below will add a new Item to the Menu</p>
-            <form className="contact-form md-form" onSubmit={insertNewItem} style={{
-                display: `grid`
-            }}>
-                <div className="form-group">
-                    <input placeholder="Item name" className="form-control" type="text" name="itemName" value={itemName} onChange={itemNameHandler} />
-                </div>
-                <div className="form-group">
-                    <textarea placeholder="Menu item description " className="md-textarea form-control" name="itemDescription" value={itemDescription} onChange={itemDescriptionHandler} />
-                </div>
-                <div className="form-group">
-                    <input placeholder="price" className="form-control" type="number" name="itemPrice" value={itemPrice} onChange={itemPriceHandler} />
-                </div>
+            <SEO title="Updateadmin" />
+            <div style={{ maxWidth: `600px`, margin: `auto`, padding: `10px 15px` }}>
+                <h3>Insert New Item</h3>
+                <p>Admin control, form below will add a new Item to the Menu</p>
+                <form className="contact-form md-form" onSubmit={insertNewItem} style={{
+                    display: `grid`
+                }}>
+                    <div className="form-group">
+                        <input placeholder="Item name" className="form-control" type="text" name="itemName" value={itemName} onChange={itemNameHandler} />
+                    </div>
+                    <div className="form-group">
+                        <textarea placeholder="Menu item description " className="md-textarea form-control" name="itemDescription" value={itemDescription} onChange={itemDescriptionHandler} />
+                    </div>
+                    <div className="form-group">
+                        <input placeholder="price" className="form-control" type="number" name="itemPrice" value={itemPrice} onChange={itemPriceHandler} />
+                    </div>
 
-                {
-                    errorMessage !== '' &&
-                    errorMessage
-                }
-                {
-                    errorMessage === '' &&
-                    <input type="submit" className="btn btn-dark" value="send" />
-                }
+                    {
+                        errorMessage !== '' &&
+                        errorMessage
+                    }
+                    {
+                        errorMessage === '' &&
+                        <input type="submit" className="btn btn-dark" value="send" />
+                    }
 
-            </form>
-        </div>
+                </form>
+            </div>
         </Layout>
     )
 }

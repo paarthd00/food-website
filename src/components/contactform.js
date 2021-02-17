@@ -9,13 +9,11 @@ const ContactForm = () => {
     const [userEmail, setEmail] = useState("");
     const [userMessage, setMessage] = useState("");
     const [errorMessage, setErrors] = useState("Enter the Fields");
-
     const validate = () => {
         if (userName === "" || userEmail === "" || userMessage === "")
             return false
         if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(userEmail) === false)
             return false
-
         return true
     }
     const sendEmail = (e) => {
@@ -94,11 +92,10 @@ const ContactForm = () => {
                 }
 
             </form>
-
         </div>
-
     )
 }
+
 
 export default ContactForm
 

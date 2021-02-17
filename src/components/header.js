@@ -6,12 +6,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import insta from '../images/insta.svg'
 import { ToggleCartContext } from '../context/CartContext'
-// import { Link } from "gatsby"
+
+
 const Header = ({ siteTitle }) => {
   const [cartState, setCartState] = useContext(ToggleCartContext)
   const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ margin: `auto` }} icon={faShoppingCart} />
   const instaimage = <a className="instaButton" href="https://www.instagram.com/lola.yvr/"><img style={{ margin: `auto` }} src={insta} alt="insta" width="20px" /></a>
   const contactButton = <Link className="contactButton" to="/contact">contactus</Link>
+  
   function toggleCart() {
     if (cartState) {
       document.getElementById('cartContainer').style.display = "block";
@@ -59,15 +61,16 @@ const Header = ({ siteTitle }) => {
           {instaimage}
           {contactButton}
         </div>
-
       </div>
     </header>
   )
 }
 
+
 Header.propTypes = {
   siteTitle: PropTypes.string,
 }
+
 
 Header.defaultProps = {
   siteTitle: ``,

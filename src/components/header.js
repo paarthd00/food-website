@@ -18,7 +18,7 @@ import "./layout.css"
 const Header = ({ siteTitle }) => {
   const [cartState, setCartState] = useContext(ToggleCartContext)
   const [menuState, setmenuState] = useState(false)
-  const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{cursor: `pointer` }} icon={faShoppingCart} />
+  const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ cursor: `pointer`, width: `20px`, fontSize: `20px` }} icon={faShoppingCart} />
 
   function toggleCart() {
     if (cartState) {
@@ -39,7 +39,6 @@ const Header = ({ siteTitle }) => {
 
 
 
-
   return (
     <header
       style={{
@@ -47,7 +46,7 @@ const Header = ({ siteTitle }) => {
         marginBottom: `1.45rem`,
         display: `grid`,
         gridTemplateRows: `1fr `,
-        zIndex: `100` 
+        zIndex: `100`
       }}
     >
       <div
@@ -58,7 +57,7 @@ const Header = ({ siteTitle }) => {
           display: `flex`,
           alignItems: `center`,
           textAlign: `center`,
-          justifyContent:`space-between`,
+          justifyContent: `space-between`,
           width: `100%`
         }}
       >
@@ -77,18 +76,18 @@ const Header = ({ siteTitle }) => {
       </div>
       {
         (menuState) ? <div className="navContainer" style={{ animation: `menuAnimation .6s ease-in`, width: `100%`, background: `#1d1B1B`, color: `whitesmoke`, margin: `auto`, padding: `20px`, maxWidth: `960px` }}>
-          <button style={{marginLeft:`90%`}} width="100px" onClick={() => setmenuState(!menuState)} className="btn menuButton">
+          <button style={{ marginLeft: `90%` }} width="100px" onClick={() => setmenuState(!menuState)} className="btn menuButton">
             <img src={menuCross} width="20px" alt="hamburgermenu"></img>
           </button>
           <div style={{ display: `flex`, animation: `menuAnimation .6s ease-in-out`, flexDirection: `column` }}>
 
-            <Link style={{color: `green`}} to="/menupage">Menu</Link>
+            <Link style={{ color: `green` }} to="/menupage">Menu</Link>
 
 
-            <Link style={{color: `green`}} to="/about">About</Link>
+            <Link style={{ color: `green` }} to="/about">About</Link>
 
 
-            <Link style={{color: `green`}} to="/contact">Contact</Link>
+            <Link style={{ color: `green` }} to="/contact">Contact</Link>
 
 
             {/* instagram fb */}

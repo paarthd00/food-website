@@ -3,20 +3,41 @@
  * Menu component styles
  * @author paarth dhammi
  */
-@keyframes fade{
-    0%{
-        opacity: 0;
-        transform: translate3d(-10px, 0px, 0px);
-    }
-    50%{
-        opacity: .5;
-        transform: translate3d(3px, 0px, 0px);
-    }
-    100%{
-        opacity: 1;
-        transform: translate3d(0);
-    }
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translate3d(-10px, 0px, 0px);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translate3d(3px, 0px, 0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0);
+  }
 }
-p{
-    text-align: justify;
+p {
+  text-align: justify;
+}
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+  .menulayout {
+    width: 720px !important;
+    max-width: 720px !important;
+  }
+  .menuContainer{
+    width: 720px !important;
+    max-width: 720px !important;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+    .menulayout {
+        width: 960px !important;
+        max-width: 960px !important;
+      }
+      .menuContainer{
+        width: 960px !important;
+        max-width: 960px !important;
+      }
 }

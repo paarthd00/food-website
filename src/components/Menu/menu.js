@@ -28,9 +28,14 @@ const Menu = () => {
     }) : <></>
 
     return (
-        <div style={{maxWidth: `300px`,margin:`auto`,width:`300px`}}>
+        <div className="menulayout" style={{ maxWidth: `300px`, margin: `auto`, width: `300px` }}>
+        
             {list}
-            <Products />
+            <div>
+
+                <Products />
+            </div>
+
         </div>
     )
 }

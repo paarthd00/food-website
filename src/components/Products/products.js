@@ -10,10 +10,11 @@ import ProductCard from "./product-cart"
 
 const containerStyles = {
   display: "flex",
-  flexDirection: "column",
+  flexDirection: "row",
   flexWrap: "wrap",
   justifyContent: "space-between",
   padding: "1rem 0 1rem 0",
+  width: "100%"
 }
 
 const Products = (props) => {

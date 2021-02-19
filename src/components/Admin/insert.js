@@ -74,7 +74,7 @@ const InsertComponent = () => {
                 }
                 {
                     errorMessage === '' &&
-                    <input type="submit" className="btn btn-dark" value="send" />
+                    <input type="submit" className="btn btn-dark" value="Add" />
                 }
 
             </form>

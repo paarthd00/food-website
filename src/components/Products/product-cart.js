@@ -17,7 +17,7 @@ const cardStyles = {
   alignItems: "inherit",
   flexWrap: "wrap",
   padding: "1rem",
-  boxShadow: "5px 5px 25px 0 rgba(46,61,73,.2)",
+  boxShadow: "2px 2px 10px 0 rgba(46,61,73,.2)",
   backgroundColor: "#fff",
   borderRadius: "6px",
   width: "-webkit-fill-available",
@@ -32,7 +32,6 @@ const buttonStyles = {
   textAlign: "center",
   color: "white",
   padding: "12px",
-  boxShadow: "2px 5px 10px rgba(0,0,0,.1)",
   backgroundColor: "black",
   borderRadius: "6px",
   letterSpacing: "1.5px",
@@ -92,13 +91,16 @@ const ProductCard = ({ product }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    checkContainFoodQuantity()
-    //if doen't contain then adds the new cartdata to the cart else adds to the quantity
-    if (!contain)
-      setCartList(_.uniqBy([...CartList, { price: cartitemid, name: cartitemname, cartquantity: cartquantity }], 'name'));
+    if (cartquantity > 0) {
+      checkContainFoodQuantity()
+      //if doen't contain then adds the new cartdata to the cart else adds to the quantity
+      if (!contain)
+        setCartList(_.uniqBy([...CartList, { price: cartitemid, name: cartitemname, cartquantity: cartquantity }], 'name'));
 
-    window.alert('Items added to cart')
-    setContain(false)
+      window.alert('Items added to cart')
+      setContain(false)
+    }
+
   }
 
   return (
@@ -107,7 +109,7 @@ const ProductCard = ({ product }) => {
         <fieldset style={{ border: "none" }}>
           <legend>
             <h4>{product.name}</h4>
-            <p style={{margin: `auto`, textAlign:`center`}}>{product.description}</p>
+            <p style={{ margin: `auto`, textAlign: `center` }}>{product.description}</p>
           </legend>
           <label className="form-label">
             Price{" "}
@@ -120,12 +122,12 @@ const ProductCard = ({ product }) => {
             </select>
           </label>
           <br></br>
-          <label className="form-label" style={{width:`150px`}}>
+          <label className="form-label" style={{ width: `150px` }}>
             Quantity{" "}
             <Select className="form-select" options={options} onChange={(e) => setQuantity(e.value)} />
           </label>
         </fieldset>
-        <input type="submit" value="Add" className="btn btn-dark" style={buttonStyles} />
+        <input type="submit" value="Add to Cart" className="btn btn-dark" style={buttonStyles} />
       </form>
     </div>
   )

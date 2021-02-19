@@ -1,6 +1,11 @@
+/**
+ * functions/delete-menu-item.js
+ * deletes the menu item 
+ * @author paarth dhammi
+ */
+
 const co = require('co');
 const mongoose = require('mongoose');
-
 let conn = null;
 let tempMenuItem;
 const uri = process.env.MONGODB_URI;
@@ -38,7 +43,11 @@ function run() {
             conn.collection('menuitems').deleteOne({ name: tempMenuItem.name })
         }
         catch (e) {
-            console.error(e)
+            const response = {
+                statusCode: 500,
+                body: JSON.stringify(e)
+            };
+            return response;
         }
         const doc = yield M.find();
         const response = {

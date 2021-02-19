@@ -1,6 +1,12 @@
+/**
+ * src/components/cart.js
+ * component for side bar cart section and displays all the items added to cart
+ * @author paarth dhammi
+ */
+
 import Checkout from "../components/checkout"
 import React, { useContext } from 'react'
-import { CartListContext } from "../context/CartContext";
+import { CartListContext } from "../context/cart-context";
 const _ = require('lodash');
 
 const Cart = () => {

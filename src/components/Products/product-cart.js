@@ -1,5 +1,12 @@
+/**
+ * src/components/product/product.js
+ * component for item in the stripe product
+ * @author paarth dhammi
+ */
+
+
 import React, { useContext, useState, useEffect } from "react"
-import { CartListContext } from "../../context/CartContext"
+import { CartListContext } from "../../context/cart-context"
 import Select from 'react-select';
 
 const _ = require('lodash');
@@ -15,7 +22,7 @@ const cardStyles = {
   borderRadius: "6px",
   width: "-webkit-fill-available",
   margin: "auto",
-  maxWidth: "600px",
+  maxWidth: "300px",
   float: "left",
   marginBottom: "2rem",
 }
@@ -100,6 +107,7 @@ const ProductCard = ({ product }) => {
         <fieldset style={{ border: "none" }}>
           <legend>
             <h4>{product.name}</h4>
+            <p style={{margin: `auto`, textAlign:`center`}}>{product.description}</p>
           </legend>
           <label className="form-label">
             Price{" "}
@@ -112,12 +120,11 @@ const ProductCard = ({ product }) => {
             </select>
           </label>
           <br></br>
-          <label className="form-label">
+          <label className="form-label" style={{width:`150px`}}>
             Quantity{" "}
             <Select className="form-select" options={options} onChange={(e) => setQuantity(e.value)} />
           </label>
         </fieldset>
-        <p>{product.description}</p>
         <input type="submit" value="Add" className="btn btn-dark" style={buttonStyles} />
       </form>
     </div>

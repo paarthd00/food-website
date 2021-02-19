@@ -1,6 +1,13 @@
+/**
+ * src/components/Menu/menu.js
+ * loads up menu component by adding data from mongoDB to MenuItem component
+ * @author paarth dhammi
+ */
+
 import React from 'react'
 import PropTypes from 'prop-types';
 import API from '../../utils/api'
+
 const MenuItem = (myitem) => {
     console.log(myitem)
     const deleteMenuItem = () => {
@@ -17,7 +24,6 @@ const MenuItem = (myitem) => {
                 <button style={{ width: `50px` }} onClick={deleteMenuItem} className="btn btn-danger">X</button>
             </div>
             <p>{myitem.myitem.description}</p>
-
         </div>
     )
 }

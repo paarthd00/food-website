@@ -1,3 +1,10 @@
+/**
+ * functions/display-menu-items.js
+ * loads up menu component by adding data from mongoDB to MenuItem component
+ * @author paarth dhammi
+ */
+
+
 var co = require('co');
 var mongoose = require('mongoose');
 

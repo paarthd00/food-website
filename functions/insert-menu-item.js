@@ -1,3 +1,10 @@
+/**
+ * functions/insert-menu-item.js
+ * insert new menu item to the mongoDB
+ * @author paarth dhammi
+ */
+
+
 const co = require('co');
 const mongoose = require('mongoose');
 const { Schema } = mongoose

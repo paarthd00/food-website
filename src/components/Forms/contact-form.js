@@ -1,7 +1,14 @@
+/**
+ * src/components/Form/contact-form.js
+ * loads up menu component by adding data from mongoDB to MenuItem component
+ * @author paarth dhammi
+ */
+
+
 import React, { useState } from "react"
 import emailjs from 'emailjs-com';
 import { init } from 'emailjs-com';
-import "./layout.css"
+import "../layout.css"
 init(`${process.env.EMAIL_INIT}`);
 
 const ContactForm = () => {

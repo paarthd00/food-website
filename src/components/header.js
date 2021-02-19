@@ -1,18 +1,24 @@
+/**
+ * src/components/header.js
+ * loads up menu component by adding data from mongoDB to MenuItem component
+ * @author paarth dhammi
+ */
+
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React, { useContext } from "react"
+import React, { useContext, useState } from "react"
 import logo from '../images/logo.svg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
-// import insta from '../images/insta.svg'
-import { ToggleCartContext } from '../context/CartContext'
-
+import { ToggleCartContext } from '../context/cart-context'
+import menuHamburger from '../images/Menuclose.svg'
+import menuCross from '../images/Menuopen.svg'
+import "./layout.css"
 
 const Header = ({ siteTitle }) => {
   const [cartState, setCartState] = useContext(ToggleCartContext)
-  const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ margin: `auto` }} icon={faShoppingCart} />
-  
-  const contactButton = <Link className="btn contactButton" to="/contact">CONTACT</Link>
+  const [menuState, setmenuState] = useState(false)
+  const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ margin: `auto`, cursor: `pointer` }} icon={faShoppingCart} />
 
   function toggleCart() {
     if (cartState) {
@@ -25,43 +31,73 @@ const Header = ({ siteTitle }) => {
     }
   }
 
+
+
+  const menuButton = (!menuState) ? <button width="100px" onClick={() => setmenuState(!menuState)} className="btn menuButton">
+    <img src={menuHamburger} width="20px" alt="hamburgermenu"></img>
+  </button> : <></>
+
+
+
+
   return (
     <header
       style={{
         background: `whitesmoke`,
         marginBottom: `1.45rem`,
+        display: `grid`,
+        gridTemplateRows: `1fr `,
+        zIndex: `100` 
       }}
     >
       <div
         style={{
           margin: `auto`,
-          maxWidth: `650px`,
+          maxWidth: `960px`,
           padding: `1.45rem 1.0875rem`,
-          display: `grid`,
-          gridTemplateColumns: `1fr 1fr`,
+          display: `flex`,
           alignItems: `center`,
           textAlign: `center`,
-
+          justifyContent:`space-between`,
+          width: `100%`
         }}
       >
-        <h1 style={{ margin: 0 }}>
-          <Link
-            className="Logo"
-            to="/"
-            style={{
-              color: `white`,
-              textDecoration: `none`,
-            }}
-          >
-            <img src={logo} alt={siteTitle} width="200px"></img>
-          </Link>
-        </h1>
-        <div style={{ display: `grid`, justifyContent: `center`, cursor: `pointer`, gridTemplateColumns: `1fr 1fr` }}>
-          {contactButton}
-          {/* {instaimage} */}
-          {cart}
-        </div>
+        {menuButton}
+        <Link
+          className="Logo"
+          to="/"
+          style={{
+            color: `white`,
+            textDecoration: `none`,
+          }}
+        >
+          <img src={logo} alt={siteTitle} width="200px"></img>
+        </Link>
+        {cart}
       </div>
+      {
+        (menuState) ? <div className="navContainer" style={{ animation: `menuAnimation .6s ease-in`, width: `100%`, background: `#1d1B1B`, color: `whitesmoke`, margin: `auto`, padding: `20px`, maxWidth: `960px` }}>
+          <button style={{marginLeft:`90%`}} width="100px" onClick={() => setmenuState(!menuState)} className="btn menuButton">
+            <img src={menuCross} width="20px" alt="hamburgermenu"></img>
+          </button>
+          <div style={{ display: `flex`, animation: `menuAnimation .6s ease-in-out`, flexDirection: `column` }}>
+
+            <Link to="/menupage">Menu</Link>
+
+
+            <Link to="/About">About</Link>
+
+
+            <Link to="/contact">Contact</Link>
+
+
+            {/* instagram fb */}
+
+          </div>
+
+        </div> : <></>
+
+      }
     </header>
   )
 }

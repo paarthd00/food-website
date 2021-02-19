@@ -8,11 +8,12 @@
 import React, { useState } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-import { CartListContext, ToggleCartContext } from "../context/CartContext";
+import { CartListContext, ToggleCartContext } from "../context/cart-context";
 import Header from "./header"
 import "./layout.css"
 import Cart from "../components/cart"
 import insta from '../images/insta.svg'
+
 
 const Layout = ({ children }) => {
   // const instaimage = 
@@ -31,16 +32,19 @@ const Layout = ({ children }) => {
   const menuStyle = {
     display: `none`,
     float: `right`,
-    backgroundColor: `#669DB3FF`,
+    backgroundColor: `black`,
     zIndex: `100`,
     padding: `10px`,
     position: `absolute`,
-    top: `95px`,
-    overflow: `scroll`,
+    top: `120px`,
+    overflowY: `scroll`,
     height: `500px`,
-    color: `#F0F6F7FF`,
+    color: `white`,
     width: `200px`,
-    animation: `fade .66s ease-in-out`
+    animation: `fade .66s ease-in-out`,
+    paddingRight: `17px`, /* Increase/decrease this value for cross-browser compatibility */
+    boxSizing: `content-box`,
+    // right: `-17px`
   }
 
   return (
@@ -48,20 +52,22 @@ const Layout = ({ children }) => {
       <ToggleCartContext.Provider value={[cartState, setCartState]}>
         <CartListContext.Provider value={[cartList, setCartList]}>
           <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-          <div id="cartContainer" style={menuStyle}>
-            <Cart />
-          </div>
+
           <div
             style={{
               margin: `0 auto`,
-              maxWidth: 960,
+              maxWidth: `960px`,
               padding: `0 1.0875rem 1.45rem`,
             }}
           >
+            <div id="cartContainer" style={menuStyle}>
+              <Cart />
+            </div>
             <main style={{ fontFamily: `system-ui` }}>{children}</main>
             <footer
               style={{
                 marginTop: `2rem`,
+                textAlign: `center`
               }}
             >
               © Lola Comfort Food, 2021

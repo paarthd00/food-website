@@ -1,7 +1,13 @@
+/**
+ * src/components/Menu/menu.js
+ * loads up menu component by adding data from mongoDB to MenuItem component
+ * @author paarth dhammi
+ */
+
 import React, { useEffect, useState } from "react";
-// import Products from "../Products/Products"
+import Products from "../Products/products"
 import "./menu.css"
-import MenuItem from './Menuitem'
+import MenuItem from './menu-item'
 import API from '../../utils/api';
 const Menu = () => {
 
@@ -22,9 +28,9 @@ const Menu = () => {
     }) : <></>
 
     return (
-        <div style={{maxWidth: `650px`,margin:`auto`,width:`650px`}}>
+        <div style={{maxWidth: `300px`,margin:`auto`,width:`300px`}}>
             {list}
-            {/* <Products /> */}
+            <Products />
         </div>
     )
 }

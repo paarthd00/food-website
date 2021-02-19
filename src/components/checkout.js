@@ -1,6 +1,13 @@
+/**
+ * src/components/Menu/menu.js
+ * loads up menu component by adding data from mongoDB to MenuItem component
+ * @author paarth dhammi
+ */
+
+
 import React, { useState, useContext } from "react"
 import getStripe from "../utils/stripejs"
-import { CartListContext } from "../context/CartContext";
+import { CartListContext } from "../context/cart-context";
 
 
 const buttonStyles = {
@@ -12,8 +19,7 @@ const buttonStyles = {
     backgroundColor: "rgb(255, 178, 56)",
     borderRadius: "6px",
     letterSpacing: "1.5px",
-    cursor: "pointer",
-    // float: "right"
+    cursor: "pointer"
 }
 
 const buttonDisabledStyles = {

@@ -1,6 +1,12 @@
+/**
+ * src/components/Product/products.js 
+ * Loads up the stripe products
+ * @author paarth dhammi
+ */
+
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import ProductCard from "./ProductCard"
+import ProductCard from "./product-cart"
 
 const containerStyles = {
   display: "flex",

@@ -37,8 +37,14 @@ const Cart = () => {
             {
                 (cartArray.length && typeof (cartList[0]) === 'undefined')
                     ? (<p>Keep Shopping</p>)
-                    : (<p>Keep Shopping</p>)
+                    : <></>
             }
+            {
+                (cartArray.length>1)
+                ? (<Checkout />)
+                : (<></>)
+            }
+
 
             {
                 (cartArray.length)

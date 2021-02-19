@@ -12,8 +12,9 @@ const IndexPage = () => {
         <SEO title="Home" />
         <Image />
         <ContactForm />
+        <pre>Below is admin page, will not be available to users</pre>
         <Link to="/menupage/">Menu_Page</Link> <br />
-        <Link to="/updatemenu/">InsertItems</Link> <br />
+        <Link to="/updatemenu/">Manage_menu_items</Link> <br />
       </Layout>
   )
 }

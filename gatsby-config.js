@@ -24,7 +24,7 @@ module.exports = {
   siteMetadata: {
     title: `Delicious filipino dishes`,
     description: `Delicious filipino dishes made with love served at your doorstep anywhere in Vancouver.`,
-    author: `paarthd00`,
+    author: `paarth_dhammi`,
   },
   plugins: [
     {

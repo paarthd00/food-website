@@ -18,7 +18,7 @@ import "./layout.css"
 const Header = ({ siteTitle }) => {
   const [cartState, setCartState] = useContext(ToggleCartContext)
   const [menuState, setmenuState] = useState(false)
-  const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{ margin: `auto`, cursor: `pointer` }} icon={faShoppingCart} />
+  const cart = <FontAwesomeIcon className="cartButton" onClick={toggleCart} style={{cursor: `pointer` }} icon={faShoppingCart} />
 
   function toggleCart() {
     if (cartState) {
@@ -82,13 +82,13 @@ const Header = ({ siteTitle }) => {
           </button>
           <div style={{ display: `flex`, animation: `menuAnimation .6s ease-in-out`, flexDirection: `column` }}>
 
-            <Link to="/menupage">Menu</Link>
+            <Link style={{color: `green`}} to="/menupage">Menu</Link>
 
 
-            <Link to="/About">About</Link>
+            <Link style={{color: `green`}} to="/about">About</Link>
 
 
-            <Link to="/contact">Contact</Link>
+            <Link style={{color: `green`}} to="/contact">Contact</Link>
 
 
             {/* instagram fb */}

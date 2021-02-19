@@ -1,14 +1,19 @@
-<p>Lolas comfort food</p>
-
-Simple web app for local mom's and pop's restaurant in vancouver,
+<h3>Lolas comfort food</h3>
+<p>
+Web app for local mom's and pop's restaurant in vancouver,
 made with JamStack 
-
+</p>
 <h3>Start the Project</h3>
 
-<p>npm start</p>
+<pre>npm start</pre>
 
 <h3>Run Test</h3>
 
-<p>
+<pre>
 npm run cypress:open
-</p>
+</pre>
+
+<h3>Key Features </h3>
+<li>cart Functionality </li>
+<li>contact form</li> 
+<li>Admin functionality to manage products</li>

@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
     height: `500px`,
     color: `white`,
     width: `200px`,
-    animation: `fade .66s ease-in-out`,
+    animation: `fade .33s ease-in-out`,
     paddingRight: `17px`, /* Increase/decrease this value for cross-browser compatibility */
     boxSizing: `content-box`,
     // right: `-17px`

@@ -75,7 +75,7 @@ const Header = ({ siteTitle }) => {
         {cart}
       </div>
       {
-        (menuState) ? <div className="navContainer" style={{ animation: `menuAnimation .6s ease-in`, width: `100%`, background: `#1d1B1B`, color: `whitesmoke`, margin: `auto`, padding: `20px`, maxWidth: `960px` }}>
+        (menuState) ? <div className="navContainer" style={{ animation: `menuAnimation .3s ease-in`, width: `100%`, background: `#1d1B1B`, color: `whitesmoke`, margin: `auto`, padding: `20px`, maxWidth: `960px` }}>
           <button style={{ marginLeft: `90%` }} width="100px" onClick={() => setmenuState(!menuState)} className="btn menuButton">
             <img src={menuCross} width="20px" alt="hamburgermenu"></img>
           </button>

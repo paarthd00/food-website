@@ -596,9 +596,9 @@ pre tt:after {
 }
 @keyframes menuAnimation {
   0%{
-    height: 0;
+    /* height: 0; */
     opacity: 0;
-    scale: 0;
+    transform: scale3d(1,0,1);
   }
   /* 50%{
     opacity: .5;
@@ -606,8 +606,8 @@ pre tt:after {
   } */
   100%{
     opacity: 1;
-    height: 100%;
-    scale:1;
+    /* height: 100%; */
+    transform: scale3d(1,1,1);
   }
 }
 @media only screen and (max-width: 480px) {

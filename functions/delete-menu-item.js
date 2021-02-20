@@ -23,24 +23,30 @@ exports.handler = function (event, context, callback) {
 
 function run() {
     return co(function* () {
-
-        if (conn == null) {
-            conn = yield mongoose.createConnection(uri, {
-                useNewUrlParser: true,
-                useUnifiedTopology: true
-            });
-            conn.model('menuitems', new mongoose.Schema({
-                _id: String,
-                name: String,
-                description: String,
-                price: Number,
-            }));
-        }
-
-        const M = conn.model('menuitems');
         try {
+            if (conn == null) {
+                conn = yield mongoose.createConnection(uri, {
+                    useNewUrlParser: true,
+                    useUnifiedTopology: true
+                });
+                conn.model('menuitems', new mongoose.Schema({
+                    name: String,
+                    description: String,
+                    price: Number,
+                }));
+
+
+            }
+            const M = conn.model('menuitems');
             console.log(tempMenuItem)
             conn.collection('menuitems').deleteOne({ name: tempMenuItem.name })
+            const doc = yield M.find();
+            const response = {
+                statusCode: 200,
+                body: JSON.stringify(doc)
+            };
+            return response;
+
         }
         catch (e) {
             const response = {
@@ -49,11 +55,5 @@ function run() {
             };
             return response;
         }
-        const doc = yield M.find();
-        const response = {
-            statusCode: 200,
-            body: JSON.stringify(doc)
-        };
-        return response;
     });
 }

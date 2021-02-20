@@ -16,17 +16,17 @@ const displayAllMenuItems = () => {
     })
 }
 
-const updateMenuItem = (todoId, data) => {
-    return fetch(`/.netlify/functions/update-menu-item/${todoId}`, {
-        body: JSON.stringify(data),
-        method: 'POST'
+const updateMenuItem = (menuId, data) => {
+    return fetch(`/.netlify/functions/update-menu-item/${menuId}`, {
+        body: JSON.stringify({ _id: menuId, data: data }),
+        method: 'PUT'
     }).then(response => {
         return response.json()
     })
 }
 
 const deleteMenuItem = (menuItem) => {
-    return fetch(`/.netlify/functions/delete-menu-item/${menuItem}`, {
+    return fetch(`/.netlify/functions/delete-menu-item/${menuItem.name}`, {
         method: 'POST',
         body: JSON.stringify(menuItem)
     }).then(response => {

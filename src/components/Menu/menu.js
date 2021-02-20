@@ -12,14 +12,16 @@ import API from '../../utils/api';
 const Menu = () => {
 
     const [menuitems, setMenuItems] = useState([])
-
+    const [valid, setValid] = useState(true)
     useEffect(() => {
-        if (!menuitems.length)
+        if (!menuitems.length && valid){
             API.readAll()
-                .then(json => setMenuItems(json))
-                .catch(err => console.log(err))
+            .then((json) =>{ setMenuItems(json); (!menuitems.length) ? setValid(false): setValid(true)})
+            .catch(err => console.log(err))
+        }
 
-    }, [menuitems])
+
+    }, [menuitems,valid])
 
     const list = (menuitems) ? menuitems.map((el, i) => {
         return (

@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import InsertComponent from '../components/Admin/insert'
+
 import Menu from '../components/Menu/menu'
 
 const UpdateMenu = () => {
@@ -21,7 +21,6 @@ const UpdateMenu = () => {
             <Menu />
 
 
-            <InsertComponent />
         </Layout>
     )
 }

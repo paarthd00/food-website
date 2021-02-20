@@ -44,6 +44,16 @@ const batchDeleteMenuItem = (menuItemIds) => {
         return response.json()
     })
 }
+const loginUser = (userCreds) => {
+    return fetch(`/.netlify/functions/login`, {
+        body: JSON.stringify({
+            creds: userCreds
+        }),
+        method: 'POST'
+    }).then(response => {
+        return response.json()
+    })
+}
 
 
 export default {
@@ -51,5 +61,6 @@ export default {
     readAll: displayAllMenuItems,
     update: updateMenuItem,
     delete: deleteMenuItem,
-    batchDelete: batchDeleteMenuItem
+    batchDelete: batchDeleteMenuItem,
+    login: loginUser
 }

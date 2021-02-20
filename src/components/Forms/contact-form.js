@@ -9,7 +9,7 @@ import React, { useState } from "react"
 import emailjs from 'emailjs-com';
 import { init } from 'emailjs-com';
 import "../layout.css"
-init(`${process.env.EMAIL_INIT}`);
+init(process.env.EMAIL_INIT);
 
 const ContactForm = () => {
     const [userName, setName] = useState("");

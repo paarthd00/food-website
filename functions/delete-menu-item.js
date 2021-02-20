@@ -1,7 +1,6 @@
 /**
  * functions/delete-menu-item.js
- * deletes the menu item 
- * @author paarth dhammi
+ * deletes the specified menu item 
  */
 
 const co = require('co');

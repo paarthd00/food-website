@@ -1,7 +1,6 @@
 /**
  * functions/display-menu-items.js
- * loads up menu component by adding data from mongoDB to MenuItem component
- * @author paarth dhammi
+ * returns all the menu items in the DB
  */
 
 

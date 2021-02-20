@@ -1,7 +1,6 @@
 /**
  * function/update-menu-item.js
  * update a menu item by assigning new data based on the id passed 
- * @author paarth dhammi
  */
 
 const { ObjectID } = require('bson');

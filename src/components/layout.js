@@ -19,6 +19,7 @@ const Layout = ({ children }) => {
   // const instaimage = 
   const [cartList, setCartList] = useState([])
   const [cartState, setCartState] = useState(false)
+  
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

@@ -1,7 +1,6 @@
 /**
  * functions/batch-delete.js
  * Batch delete Menu items from the MongoDB
- * @author paarth dhammi
  */
 
 

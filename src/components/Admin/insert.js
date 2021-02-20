@@ -1,7 +1,6 @@
 /**
  * src/components/Admin/insert.js 
  * Insert component for adding new menu item in the list
- * @author paarth dhammi
  */
 
 import React, { useState } from 'react'

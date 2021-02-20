@@ -1,7 +1,6 @@
 /**
  * functions/insert-menu-item.js
  * insert new menu item to the mongoDB
- * @author paarth dhammi
  */
 
 

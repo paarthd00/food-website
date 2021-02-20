@@ -2,10 +2,11 @@
 <p>
 Web app for local mom's and pop's restaurant in Vancouver made with JamStack.</p>
 <h3>Key Features </h3>
-<li>cart Functionality </li>
-<li>contact form</li> 
+<li>Cart Functionality </li>
+<li>Contact form</li> 
 <li>Admin functionality to manage products</li>
-<li>serverless cloud functions</li>
+<li>Serverless cloud functions</li>
+<li>Test driven application, tests implemented using cypress</li>
 </p>
 Install dependencies and Build using
 <pre>npm i && npm run build</pre>

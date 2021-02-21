@@ -46,9 +46,7 @@ const batchDeleteMenuItem = (menuItemIds) => {
 }
 const loginUser = (userCreds) => {
     return fetch(`/.netlify/functions/login`, {
-        body: JSON.stringify({
-            creds: userCreds
-        }),
+        body: JSON.stringify(userCreds),
         method: 'POST'
     }).then(response => {
         return response.json()

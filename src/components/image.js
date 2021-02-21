@@ -1,6 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+// import { auto } from "@popperjs/core"
 
 /*
  * This component is built using `gatsby-image` to automatically serve optimized
@@ -16,9 +17,9 @@ import Img from "gatsby-image"
 const Image = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "food.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "foo1.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 600) {
+          fluid(maxWidth: 960) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -30,7 +31,7 @@ const Image = () => {
     return <div>Picture not found</div>
   }
 
-  return <Img style={{ height: `500px`, margin: `auto`, marginBottom: `50px`, backgroundSize: `contain` }} fluid={data.placeholderImage.childImageSharp.fluid} />
+  return <Img style={{ backgroundAttachment:`fixed`, margin: `auto`, backgroundSize: `auto 600px`, top: `120px`, marginBottom: `150px` }} fluid={data.placeholderImage.childImageSharp.fluid} />
 }
 
 export default Image

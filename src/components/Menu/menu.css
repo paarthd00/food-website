@@ -20,14 +20,15 @@
 p {
   text-align: justify;
 }
+
 @media only screen and (min-width: 480px) and (max-width: 1024px) {
   .menulayout {
-    width: 720px !important;
-    max-width: 720px !important;
+    width: 400px !important;
+    max-width: 400px !important;
   }
   .menuContainer{
-    width: 720px !important;
-    max-width: 720px !important;
+    width: 400px !important;
+    max-width: 400px !important;
   }
 }
 

@@ -398,6 +398,7 @@ p {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-family: "tradegothicltpro-lig,sans-serif";
 }
 pre {
   margin-left: 0;
@@ -411,6 +412,7 @@ pre {
   overflow: auto;
   word-wrap: normal;
   padding: 1.45rem;
+  font-family: "tradegothicltpro-lig,sans-serif";
 }
 table {
   margin-left: 0;
@@ -595,23 +597,35 @@ pre tt:after {
   border-bottom: 1px solid #ced4da;
 }
 @keyframes menuAnimation {
-  0%{
-    /* height: 0; */
+  0% {
     opacity: 0;
-    transform: scale3d(1,0,1);
+    transform: scale3d(1, 0, 1);
   }
-  /* 50%{
-    opacity: .5;
-    height: 50%;
-  } */
-  100%{
+  100% {
     opacity: 1;
-    /* height: 100%; */
-    transform: scale3d(1,1,1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes fadeLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(40, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@media only screen and (min-width: 480px) and (max-width: 1024px) {
+  .featureImages {
+    grid-template-columns: 1fr 1fr !important;
   }
 }
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+  .featureImages {
+    grid-template-columns: 1fr !important;
   }
 }

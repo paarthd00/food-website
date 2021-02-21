@@ -5,7 +5,6 @@
 
 const { ObjectID } = require('bson');
 const co = require('co');
-// const { map } = require('jquery');
 const mongoose = require('mongoose');
 const { Schema } = mongoose
 let conn = null;

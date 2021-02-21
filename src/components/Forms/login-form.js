@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import API from '../../utils/api'
 const LoginForm = () => {
-    const [username, setusername] = useState()
-    const [userpassword, setuserpassword] = useState()
+    const [username, setusername] = useState('')
+    const [userpassword, setuserpassword] = useState('')
 
     const userNameHandler = (e) => {
         e.preventDefault();
@@ -15,8 +15,8 @@ const LoginForm = () => {
         let val = e.target.value;
         setuserpassword(val)
     }
-    const tryLogin = () => {
-        API.login({ username, userpassword })
+    const tryLogin = async () => {
+        await API.login({ username, userpassword })
     }
 
     return (

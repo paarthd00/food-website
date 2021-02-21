@@ -4,24 +4,25 @@
  * @author paarth dhammi
  */
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import Products from "../Products/products"
 import "./menu.css"
 import MenuItem from './menu-item'
 import API from '../../utils/api';
+import { UserLoginContext } from '../../context/cart-context'
 const Menu = () => {
-
+    const [userState] = useContext(UserLoginContext)
     const [menuitems, setMenuItems] = useState([])
     const [valid, setValid] = useState(true)
     useEffect(() => {
-        if (!menuitems.length && valid){
+        if (!menuitems.length && valid) {
             API.readAll()
-            .then((json) =>{ setMenuItems(json); (!menuitems.length) ? setValid(false): setValid(true)})
-            .catch(err => console.log(err))
+                .then((json) => { setMenuItems(json); (!menuitems.length) ? setValid(false) : setValid(true) })
+                .catch(err => console.log(err))
         }
 
 
-    }, [menuitems,valid])
+    }, [menuitems, valid])
 
     const list = (menuitems) ? menuitems.map((el, i) => {
         return (
@@ -30,14 +31,16 @@ const Menu = () => {
     }) : <></>
 
     return (
-        <div className="menulayout" style={{ maxWidth: `300px`, margin: `auto`, width: `300px` }}>
-        
+        <div className="menulayout" style={{ maxWidth: `300px`, margin: `auto`, width: `300px`, top:`150px`, position: `relative`, marginBottom:`150px` }}>
+
             {list}
-            <div>
-
-                <Products />
-            </div>
-
+            { 
+                (userState) ?
+                <div>
+                    <Products />
+                </div> :
+                <></>
+            }
         </div>
     )
 }

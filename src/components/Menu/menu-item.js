@@ -1,14 +1,13 @@
 /**
  * src/components/Menu/menu.js
- * 
- * @author paarth dhammi
  */
 
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types';
 import API from '../../utils/api'
-
+import { UserLoginContext } from '../../context/cart-context'
 const MenuItem = (myitem) => {
+    const [userState] = useContext(UserLoginContext)
     const [errorMessage, setErrors] = useState('')
     const [updateValid, setUpdateValid] = useState(false)
     const [menuItemName, setMenuItemName] = useState(myitem.myitem.name)
@@ -55,13 +54,17 @@ const MenuItem = (myitem) => {
     }
     return (
         <div key={myitem.myitem._id} style={{ marginBottom: `50px`, textAlign: `center`, alignItems: `center` }}>
-            {(!updateValid) ? <div style={{ display: `grid`, gridTemplateColumns: `1fr 1fr 1fr`, textAlign: `center`, alignItems: `center` }}>
+            {(!updateValid) ? <div style={{ display: `grid`, gridTemplateColumns: `1fr 1fr`, textAlign: `center`, alignItems: `center` }}>
                 {/* {myitem.myitem.image && <img src={myitem.myitem.image} alt={myitem.myitem.name} style={{ width: `100px`, borderRadius: `50%` }}></img>} */}
-                <h5>{myitem.myitem.name}</h5>
-                <p>$ {myitem.myitem.price}</p>
-                <button style={{ width: `50px` }} onClick={deleteMenuItem} className="btn btn-danger">X</button>
-                <p>{myitem.myitem.description}</p>
-                <button style={{}} onClick={() => setUpdateValid(!updateValid)} className="btn btn-success">update</button>
+                <h4>{myitem.myitem.name}</h4><h5>$ {myitem.myitem.price}</h5>
+                <h5>{myitem.myitem.description}</h5>
+                
+                {(userState) ? <>
+                    <button style={{ width: `50px` }} onClick={deleteMenuItem} className="btn btn-danger">X</button>
+
+                    <button style={{}} onClick={() => setUpdateValid(!updateValid)} className="btn btn-success">update</button>
+                </>
+                    : <></>}
             </div> :
                 <div>
                     <input placeholder="name" value={menuItemName} onChange={itemNameHandler}>

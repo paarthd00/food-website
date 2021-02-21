@@ -6,8 +6,10 @@ import SEO from "../components/seo"
 const ContactPage = () => (
     <Layout>
         <SEO title="Contact" />
-            <pre>This is Contact Form</pre>
+        <div className="contactFormContainer" style={{ position: `relative`, top: `120px`, marginBottom: `150px` }}>
             <ContactForm />
+        </div>
+
     </Layout>
 )
 

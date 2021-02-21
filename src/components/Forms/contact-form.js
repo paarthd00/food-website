@@ -69,7 +69,7 @@ const ContactForm = () => {
     }
 
     return (
-        <div style={{ maxWidth: `600px`, margin: `auto`, padding: `10px 15px` }}>
+        <div style={{ maxWidth: `960px`, margin: `auto`, padding: `10px 15px` }}>
             <h3>  Contact Us</h3>
             <p>Send a quick message, and place an order</p>
             <form className="contact-form md-form" onSubmit={sendEmail} style={{

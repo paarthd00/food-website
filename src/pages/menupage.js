@@ -7,8 +7,8 @@ const SecondPage = () => (
   <Layout>
     <SEO title="MenuPage" />
     <div className="menu-container" style={{ textAlign: `center`, top: `120px`, position: `relative` }}>
-      <h1>This is Food page</h1>
-      <h6>Spicy and aroma that tastes like the best dish from your lola</h6>
+      <h1>Menu</h1>
+      <h6>Spices and aroma like non-other</h6>
       <div className="menuContainer" style={{ maxWidth: `400px`, margin: `auto` }}>
         <Menu />
       </div>

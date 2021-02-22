@@ -4,7 +4,7 @@
  * @author paarth dhammi
  */
 
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import Products from "../Products/products"
 import "./menu.css"
 import MenuItem from './menu-item'
@@ -31,15 +31,15 @@ const Menu = () => {
     }) : <></>
 
     return (
-        <div className="menulayout" style={{ maxWidth: `300px`, margin: `auto`, width: `300px`, top:`150px`, position: `relative`, marginBottom:`150px` }}>
+        <div className="menulayout" style={{ top: `0`, maxWidth: `300px`, margin: `0`, width: `300px`, position: `relative` }}>
 
             {list}
-            { 
+            {
                 (userState) ?
-                <div>
-                    <Products />
-                </div> :
-                <></>
+                    <div>
+                        <Products />
+                    </div> :
+                    <></>
             }
         </div>
     )

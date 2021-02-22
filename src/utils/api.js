@@ -34,16 +34,16 @@ const deleteMenuItem = (menuItem) => {
     })
 }
 
-const batchDeleteMenuItem = (menuItemIds) => {
-    return fetch(`/.netlify/functions/batch-delete`, {
-        body: JSON.stringify({
-            ids: menuItemIds
-        }),
-        method: 'POST'
-    }).then(response => {
-        return response.json()
-    })
-}
+// const batchDeleteMenuItem = (menuItemIds) => {
+//     return fetch(`/.netlify/functions/batch-delete`, {
+//         body: JSON.stringify({
+//             ids: menuItemIds
+//         }),
+//         method: 'POST'
+//     }).then(response => {
+//         return response.json()
+//     })
+// }
 const loginUser = (userCreds) => {
     return fetch(`/.netlify/functions/login`, {
         body: JSON.stringify(userCreds),
@@ -59,6 +59,6 @@ export default {
     readAll: displayAllMenuItems,
     update: updateMenuItem,
     delete: deleteMenuItem,
-    batchDelete: batchDeleteMenuItem,
+    // batchDelete: batchDeleteMenuItem,
     login: loginUser
 }

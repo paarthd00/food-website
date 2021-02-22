@@ -72,7 +72,8 @@ const Layout = ({ children }) => {
                   textAlign: `center`,
                   width:`100%`,
                   margin:`0`,
-                  padding:`10px 10px`
+                  padding:`10px 10px`,
+                  cursor:`pointer`
                 }}
               >
                 © Lola Comfort Food, 2021 | 

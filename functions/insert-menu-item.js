@@ -8,9 +8,8 @@ const co = require('co');
 const mongoose = require('mongoose');
 const { Schema } = mongoose
 let conn = null;
-let tempMenuItem;
 const uri = process.env.MONGODB_URI;
-
+let tempMenuItem;
 exports.handler = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
     tempMenuItem = JSON.parse(event.body)

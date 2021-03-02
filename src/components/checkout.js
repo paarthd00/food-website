@@ -49,8 +49,8 @@ const Checkout = () => {
         const { error } = await stripe.redirectToCheckout({
             mode: "payment",
             lineItems: temparr,
-            successUrl: `http://localhost:8888/contact/`,
-            cancelUrl: `http://localhost:8000/`,
+            successUrl: `https://lolayvr.netlify.app/contact/`,
+            cancelUrl: `https://lolayvr.netlify.app/`,
         })
 
         if (error) {

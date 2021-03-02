@@ -49,7 +49,7 @@ const Checkout = () => {
         const { error } = await stripe.redirectToCheckout({
             mode: "payment",
             lineItems: temparr,
-            successUrl: `http://localhost:8000/page-2/`,
+            successUrl: `http://localhost:8888/contact/`,
             cancelUrl: `http://localhost:8000/`,
         })
 

@@ -1,7 +1,6 @@
 /**
  * src/components/header.js
  * loads up menu component by adding data from mongoDB to MenuItem component
- * @author paarth dhammi
  */
 
 import { Link } from "gatsby"

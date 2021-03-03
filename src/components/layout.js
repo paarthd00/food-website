@@ -1,9 +1,7 @@
 /**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
+*src/components/header.js
+*Layout component for the project
+*/
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"

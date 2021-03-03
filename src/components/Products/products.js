@@ -1,7 +1,6 @@
 /**
  * src/components/Product/products.js 
  * Loads up the stripe products
- * @author paarth dhammi
  */
 
 import React from "react"

@@ -1,7 +1,6 @@
 /**
  * src/components/product/product.js
  * component for item in the stripe product
- * @author paarth dhammi
  */
 
 

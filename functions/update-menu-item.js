@@ -9,13 +9,11 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose
 let conn = null;
 let tempMenuBody;
-// let menuItemId;
 const uri = process.env.MONGODB_URI;
 
 exports.handler = (event, context, callback) => {
     context.callbackWaitsForEmptyEventLoop = false;
     tempMenuBody = JSON.parse(event.body)
-    // menuItemId = JSON.parse(event.body._id)
     run().
         then(res => {
             callback(null, res);
@@ -44,7 +42,6 @@ const run = () => {
             const doc = yield M.findOne({ _id: tempMenuBody._id })
             Object.assign(doc, tempMenuBody.data)
             yield doc.save()
-            console.log(doc)
             const response = {
                 statusCode: 200,
                 body: JSON.stringify(doc)

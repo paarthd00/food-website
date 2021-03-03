@@ -1,7 +1,6 @@
 /**
  * src/components/Menu/menu.js
  * loads up menu component by adding data from mongoDB to MenuItem component
- * @author paarth dhammi
  */
 
 

@@ -20,10 +20,10 @@ const LoginForm = () => {
     }
 
     return (
-        <div className="login-form">
-            <form onSubmit={tryLogin}>
-                <input name="userName" value={username} onChange={userNameHandler}></input>
-                <input name="userPassword" value={userpassword} onChange={userPasswordHandler}></input>
+        <div className="login-form" style={{ display: `grid`, height: `500px` }}>
+            <form onSubmit={tryLogin} style={{ display: `grid`, alignItems: `center`, marginTop: `120px` }}>
+                <input name="userName" placeholder="name" value={username} onChange={userNameHandler}></input>
+                <input name="userPassword" placeholder="password**" value={userpassword} onChange={userPasswordHandler}></input>
                 <button type="submit">Login</button>
             </form>
         </div>

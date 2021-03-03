@@ -1,7 +1,6 @@
 /**
  * src/components/cart.js
  * component for side bar cart section and displays all the items added to cart
- * @author paarth dhammi
  */
 
 import Checkout from "../components/checkout"

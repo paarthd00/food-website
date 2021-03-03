@@ -1,6 +1,6 @@
 /**
- * function/update-menu-item.js
- * update a menu item by assigning new data based on the id passed 
+ * function/login.js
+ * Login user
  */
 
 const { ObjectID } = require('bson');
@@ -44,12 +44,11 @@ const login = () => {
                 .digest('hex');
             const M = conn.model('users');
             const doc = yield M.findOne({ username: usercreds.username })
+            //converting document data to an array
             let myarr = [] = Object.values(doc);
-            const userarr = (Object.values(myarr[myarr.length - 2]))
-            if (userarr[2] == hash)
-                console.log('matched')
-            else
-                console.log('not matched')
+            //converting login users data to array, user object at 2nd last position
+            const userarr = (Object.values(myarr[myarr.length - 2]));
+            assert(userarr[2] == hash) ? console.log('matched') : console.log('not matched');
             const response = {
                 statusCode: 200,
                 body: JSON.stringify({ data: doc })

@@ -43,12 +43,18 @@ const login = () => {
             const hash = crypto.createHmac('sha256', secret)
                 .digest('hex');
             const M = conn.model('users');
+            //finds the username in the DB
             const doc = yield M.findOne({ username: usercreds.username })
             //converting document data to an array
             let myarr = [] = Object.values(doc);
             //converting login users data to array, user object at 2nd last position
             const userarr = (Object.values(myarr[myarr.length - 2]));
-            assert(userarr[2] == hash) ? console.log('matched') : console.log('not matched');
+
+            (userarr[2] == hash)
+                ?
+                console.log('matched')
+                : console.log('not matched');
+
             const response = {
                 statusCode: 200,
                 body: JSON.stringify({ data: doc })

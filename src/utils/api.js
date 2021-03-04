@@ -34,19 +34,11 @@ const deleteMenuItem = (menuItem) => {
     })
 }
 
-const loginUser = (userCreds) => {
-    return fetch(`/.netlify/functions/login`, {
-        body: JSON.stringify(userCreds),
-        method: 'POST'
-    }).then(response => {
-        return response.json()
-    })
-}
+
 
 export default {
     create: createMenuItem,
     readAll: displayAllMenuItems,
     update: updateMenuItem,
-    delete: deleteMenuItem,
-    login: loginUser
+    delete: deleteMenuItem
 }

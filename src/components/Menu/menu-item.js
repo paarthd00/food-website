@@ -13,7 +13,7 @@ const MenuItem = (myitem) => {
     const [menuItemName, setMenuItemName] = useState(myitem.myitem.name)
     const [menuItemDescription, setMenuDescription] = useState(myitem.myitem.description)
     const [menuItemPrice, setMenuPrice] = useState(myitem.myitem.price)
-    // console.log(myitem)
+
     const deleteMenuItem = async () => {
         await API.delete(myitem.myitem);
         window.location.reload();

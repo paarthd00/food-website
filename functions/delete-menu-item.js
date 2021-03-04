@@ -23,6 +23,7 @@ exports.handler = function (event, context, callback) {
 function run() {
     return co(function* () {
         try {
+
             if (conn == null) {
                 conn = yield mongoose.createConnection(uri, {
                     useNewUrlParser: true,
@@ -33,9 +34,8 @@ function run() {
                     description: String,
                     price: Number,
                 }));
-
-
             }
+
             const M = conn.model('menuitems');
             console.log(tempMenuItem)
             conn.collection('menuitems').deleteOne({ name: tempMenuItem.name })
@@ -44,6 +44,7 @@ function run() {
                 statusCode: 200,
                 body: JSON.stringify(doc)
             };
+
             return response;
 
         }

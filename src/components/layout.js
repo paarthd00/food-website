@@ -14,7 +14,7 @@ import insta from '../images/insta.svg'
 import facebook from '../images/fb.svg'
 
 const Layout = ({ children }) => {
-  const [userState, setUserState] = useState(true)
+  const [userState, setUserState] = useState(false)
   const [cartList, setCartList] = useState([])
   const [cartState, setCartState] = useState(false)
 

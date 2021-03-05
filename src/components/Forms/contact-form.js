@@ -77,27 +77,20 @@ const ContactForm = () => {
             }}>
                 <input type="hidden" name="contact_number" />
                 <div className="form-group">
-                    {/* <label>Name</label> */}
                     <input placeholder="Name" className="form-control" type="text" name="userName" value={userName} onChange={userNameHandler} />
                 </div>
 
                 <div className="form-group">
-                    {/* <label>Email</label> */}
                     <input placeholder="Email@hotmail.com" className="form-control" type="email" name="userEmail" value={userEmail} onChange={userEmailHandler} />
                 </div>
                 <div className="form-group">
-                    {/* <label>Message</label> */}
                     <textarea placeholder="say hi!!" className="md-textarea form-control" name="userMessage" value={userMessage} onChange={userMessageHandler} />
                 </div>
                 {
-                    errorMessage !== '' &&
-                    errorMessage
+                    errorMessage !== '' ?
+                        errorMessage :
+                        <input type="submit" className="btn btn-dark" value="send" />
                 }
-                {
-                    errorMessage === '' &&
-                    <input type="submit" className="btn btn-dark" value="send" />
-                }
-
             </form>
         </div>
     )

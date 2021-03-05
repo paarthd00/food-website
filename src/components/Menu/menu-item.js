@@ -58,11 +58,11 @@ const MenuItem = (myitem) => {
                 {/* {myitem.myitem.image && <img src={myitem.myitem.image} alt={myitem.myitem.name} style={{ width: `100px`, borderRadius: `50%` }}></img>} */}
                 <h4>{myitem.myitem.name}</h4><h5>$ {myitem.myitem.price}</h5>
                 <h5>{myitem.myitem.description}</h5>
-                
+
                 {(userState) ? <>
                     <button style={{ width: `50px` }} onClick={deleteMenuItem} className="btn btn-danger">X</button>
 
-                    <button style={{}} onClick={() => setUpdateValid(!updateValid)} className="btn btn-success">update</button>
+                    <button onClick={() => setUpdateValid(!updateValid)} className="btn btn-success">update</button>
                 </>
                     : <></>}
             </div> :
@@ -84,10 +84,8 @@ const MenuItem = (myitem) => {
                         errorMessage === '' &&
                         <button onClick={updateMenuItem}>updatethisitem</button>
                     }
-
                 </div>
             }
-
         </div>
     )
 }

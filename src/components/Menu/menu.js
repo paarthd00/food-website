@@ -31,7 +31,7 @@ const Menu = () => {
     }) : <></>
 
     return (
-        <div className="menulayout" style={{ top: `0`, maxWidth: `300px`, margin: `0`, width: `300px`, position: `relative` }}>
+        <div className="menulayout" style={{ top: `0`, maxWidth: `300px`, margin: `auto`, width: `300px`, position: `relative` }}>
 
             {list}
             {
